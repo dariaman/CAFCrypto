@@ -10,7 +10,6 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 import org.json.JSONObject;
 
 /**
@@ -21,7 +20,7 @@ import org.json.JSONObject;
 public class EncryptController {
     
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces("application/json")
     @Path("/hello")
     public String Test(){
         return JSONObject.quote("Dariaman");
@@ -29,7 +28,6 @@ public class EncryptController {
     
     @GET
     @Produces("application/json")
-//    @Produces(MediaType.APPLICATION_JSON)
     @Path("/EncryptText/{PlainText}")
     public String EncGetString(@PathParam("PlainText") String PlainText) throws Exception{
         String ChiperText = new TripleDES().encrypt3DES(PlainText);
