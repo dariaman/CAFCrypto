@@ -16,7 +16,7 @@ import org.json.JSONObject;
  *
  * @author DJ
  */
-@Path("/encrypt") 
+@Path("/encrypt")
 public class EncryptController {
     
     @GET
